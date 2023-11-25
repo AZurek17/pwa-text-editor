@@ -17,12 +17,44 @@ module.exports = () => {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
     },
+// TODO: Add and configure workbox plugins for a service worker and manifest file.
     plugins: [
-      
-    ],
+      new HtmlWebpackPlugin({
+        template: './src/index.html', // verify path
+        title: 'Webpack Plugin',
+      }),
+      new WebpackPwaManifest({
+        name: 'Webpack Plugin',
+        short_name: 'Webpack Plugin',
+        description: 'Webpack Plugin',
+        background_color: '#ffffff',
+        crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
+        icons: [
+          {
+            src: path.resolve('src/assets/icons/icon-512x512.png'),
+            sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+          },
+        ],
+      }),
+      new InjectManifest({
+        swSrc: './src/js/service-worker.js',
+        swDest: 'service-worker.js',
+      }),
 
+    ],
+// TODO: Add CSS loaders and babel to webpack.
     module: {
       rules: [
+        {
+          test: /\.css$/i,
+          use: ['style-loader', 'css-loader'],
+        },
+
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: ['babel-loader'],
+        },
         
       ],
     },
