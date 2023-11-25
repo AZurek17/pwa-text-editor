@@ -20,25 +20,26 @@ module.exports = () => {
 // TODO: Add and configure workbox plugins for a service worker and manifest file.
     plugins: [
       new HtmlWebpackPlugin({
-        template: './src/index.html', // verify path
+        template: './index.html', // verify path
         title: 'Webpack Plugin',
       }),
       new WebpackPwaManifest({
         name: 'Webpack Plugin',
-        short_name: 'Webpack Plugin',
+        short_name: 'WP',
         description: 'Webpack Plugin',
         background_color: '#ffffff',
         crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
         icons: [
           {
-            src: path.resolve('src/assets/icons/icon-512x512.png'),
+            src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+            
           },
         ],
       }),
       new InjectManifest({
-        swSrc: './src/js/service-worker.js',
-        swDest: 'service-worker.js',
+        swSrc: './src-sw.js',
+        swDest: 'src-sw.js',
       }),
 
     ],
