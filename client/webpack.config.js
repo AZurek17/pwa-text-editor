@@ -24,11 +24,10 @@ module.exports = () => {
         title: 'Webpack Plugin',
       }),
       new WebpackPwaManifest({
+        inject: true,
         name: 'PWA Manifest',
         short_name: 'PWA Manifest',
         description: 'PWA Manifest Plugin',
-        background_color: '##7eb4e2',
-        theme_color: '#7eb4e2',
         start_url: '/',
         display: 'standalone',
         publicPath: '/',
@@ -36,7 +35,7 @@ module.exports = () => {
           {
             src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
-            destination: path.join('icons', 'ios'), // verify path
+            destination: path.join('assets', 'icons'), // verify path
           },
         ],
       }),
