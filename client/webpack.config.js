@@ -20,20 +20,23 @@ module.exports = () => {
 // TODO: Add and configure workbox plugins for a service worker and manifest file.
     plugins: [
       new HtmlWebpackPlugin({
-        template: './index.html', // verify path
+        template: './index.html', 
         title: 'Webpack Plugin',
       }),
       new WebpackPwaManifest({
-        name: 'Webpack Plugin',
-        short_name: 'WP',
-        description: 'Webpack Plugin',
-        background_color: '#ffffff',
-        crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
+        name: 'PWA Manifest',
+        short_name: 'PWA Manifest',
+        description: 'PWA Manifest Plugin',
+        background_color: '##7eb4e2',
+        theme_color: '#7eb4e2',
+        start_url: '/',
+        display: 'standalone',
+        publicPath: '/',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
-            
+            destination: path.join('icons', 'ios'), // verify path
           },
         ],
       }),
