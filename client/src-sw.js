@@ -34,10 +34,11 @@ registerRoute(({ request }) => ["style", "script", "worker"].includes(request.de
       new CacheableResponsePlugin({
         statuses: [0, 200],
       }),
-      new ExpirationPlugin({
-        maxAgeSeconds: 30 * 24 * 60 * 60, // 30 days
-      }),
+      // new ExpirationPlugin({
+      //   maxAgeSeconds: 30 * 24 * 60 * 60, // 30 days
+      // }),
     ],
   })
 );
+
 

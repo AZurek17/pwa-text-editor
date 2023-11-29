@@ -32,18 +32,18 @@ module.exports = () => {
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
-        name: 'PWA Manifest',
-        short_name: 'Manifest',
-        description: 'PWA Manifest Plugin',
-        background_color: '#7eb4e2',
+        name: 'j.a.k.e. Text Editor',
+        short_name: 'Text Editor',
+        description: 'just a text editor',
+        background_color: '#1a2a38',
         theme_color: '#7eb4e2',
         start_url: './',
         publicPath: './',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
-            sizes: [96], // one size
-            // sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+            // sizes: [96], // one size
+            sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
             destination: path.join('assets', 'icons'), // verify path
           },
         ],
@@ -63,7 +63,7 @@ module.exports = () => {
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env'],
-              // plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
+              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
             },
           },
         },
