@@ -2,7 +2,7 @@
 
 [Visit Deployed link](#)
 
-![orm-e-com-back-end](./images/Screenshot.png)
+![PWA-Text-Editor](./Screenshot.png)
 
 ## Technology Used:
 
