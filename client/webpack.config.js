@@ -30,10 +30,10 @@ module.exports = () => {
       }),
 
       new WebpackPwaManifest({
-      
+        fingerprints: false,
         inject: true,
         name: 'PWA Manifest',
-        short_name: 'PWA Manifest',
+        short_name: 'Manifest',
         description: 'PWA Manifest Plugin',
         background_color: '#7eb4e2',
         theme_color: '#7eb4e2',
