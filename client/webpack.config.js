@@ -23,14 +23,16 @@ module.exports = () => {
         template: './index.html', 
         title: 'Webpack Plugin',
       }),
+
       new WebpackPwaManifest({
         inject: true,
         name: 'PWA Manifest',
         short_name: 'PWA Manifest',
         description: 'PWA Manifest Plugin',
-        start_url: '/',
-        display: 'standalone',
-        publicPath: '/',
+        background_color: '#7eb4e2',
+        theme_color: '#7eb4e2',
+        start_url: './',
+        publicPath: './',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
@@ -52,13 +54,17 @@ module.exports = () => {
           test: /\.css$/i,
           use: ['style-loader', 'css-loader'],
         },
-
         {
-          test: /\.js$/,
+          test: /\.m?js$/,
           exclude: /node_modules/,
-          use: ['babel-loader'],
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
+            },
+          },
         },
-        
       ],
     },
   };
