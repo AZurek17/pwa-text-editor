@@ -9,16 +9,19 @@ const { InjectManifest } = require('workbox-webpack-plugin');
 module.exports = () => {
   return {
     mode: 'development',
-    entry: './src/js/index.js',
+    entry: {
+      main: './src/js/index.js',
+      install: './src/js/install.js',
+    },
     output: {
-      filename: 'bundle.js',
+      filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
     },
 // TODO: Add and configure workbox plugins for a service worker and manifest file.
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html', 
-        title: 'Webpack Plugin',
+        title: 'jate text editor',
       }),
 
       new InjectManifest({
@@ -27,6 +30,7 @@ module.exports = () => {
       }),
 
       new WebpackPwaManifest({
+      
         inject: true,
         name: 'PWA Manifest',
         short_name: 'PWA Manifest',
@@ -38,13 +42,12 @@ module.exports = () => {
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
-            sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+            sizes: [96], // one size
+            // sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
             destination: path.join('assets', 'icons'), // verify path
           },
         ],
       }),
-     
-
     ],
 // TODO: Add CSS loaders and babel to webpack.
     module: {
@@ -52,10 +55,6 @@ module.exports = () => {
         {
           test: /\.css$/i,
           use: ['style-loader', 'css-loader'],
-        },
-        {
-          test: /\.(png|svg|jpg|jpeg|gif)$/i,
-          type: 'src/images',
         },
         {
           test: /\.m?js$/,
