@@ -21,12 +21,12 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html', 
-        title: 'jate text editor',
+        title: 'JATE text editor'
       }),
 
       new InjectManifest({
         swSrc: './src-sw.js',
-        swDest: 'src-sw.js',
+        swDest: 'src-sw.js'
       }),
 
       new WebpackPwaManifest({
@@ -35,15 +35,15 @@ module.exports = () => {
         name: 'j.a.k.e. Text Editor',
         short_name: 'Text Editor',
         description: 'just a text editor',
-        background_color: '#1a2a38',
-        theme_color: '#7eb4e2',
+        background_color: '#225ca3',
+        theme_color: '#225ca3',
         start_url: './',
         publicPath: './',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
-            destination: path.join('assets', 'icons'), // verify path
+            destination: path.join('assets', 'icons'), 
           },
         ],
       }),
