@@ -1,6 +1,6 @@
 # pwa-text-editor ![GitHub License Badge](https://img.shields.io/badge/License-MIT-yellow)
 
-[Visit Deployed link](#)
+[Visit Deployed link](https://jate-text-editor-jzsu.onrender.com)
 
 ![PWA-Text-Editor](./Screenshot.png)
 
@@ -9,9 +9,14 @@
  * node - https://nodejs.org/en/about
  * npm - https://www.npmjs.com/
  * express - https://expressjs.com/
- * dotenv - https://www.npmjs.com/package/dotenv
+ * webpack - https://webpack.js.org/
+ * workbox webpack plugin - https://www.npmjs.com/package/workbox-webpack-plugin
+ * babel - https://babeljs.io/
+ * render - https://render.com/
 
  ## Description
+
+A browser-based text editor application with offline capabilities that can be downloaded for use. 
 
  ## Table of Contents
   
@@ -25,14 +30,12 @@
 
 ## Installation
 
-This application requires express, and mongoose.  
 * To install all dependences, run: npm install
-* To load the seeds into the database, run: npm run seed 
-* To start the server, run: node server.js
+* To build and start the server, run: npm run start
 
 ## Usage
 
-
+Just another text editor.  You can install the app onto a local computer just by clicking the install button.
 
 ## License
 
@@ -46,7 +49,7 @@ This application requires express, and mongoose.
 
  ## Tests
  
- This application tested the writen code using Insomnia Core application
+ This application has no testing
 
  ## Contributing
 
@@ -55,7 +58,7 @@ This application requires express, and mongoose.
  Check out my [github](https://github.com/AZurek17) page or send me a [email](mailto:andyzurek@gmail.com)
 
  ## Credits
- * Tutoring Session
+ * starter code - https://github.com/coding-boot-camp/cautious-meme
  * ChatGPT
  * StudyGroup
 
